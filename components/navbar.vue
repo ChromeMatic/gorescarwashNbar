@@ -27,7 +27,7 @@
    :'bg-indigo-100'"
   >
     <nav
-     class="w-full rounded-md flex px-4 py-1 bg-white justify-between items-center"
+     class="w-full rounded-md flex px-4 py-1 justify-between items-center"
      :class="isDark ? 'bg-innerDark':'bg-white'"
     >
 
