@@ -13,6 +13,10 @@ export default {
       fontFamily:{
         "Nunito":" 'Nunito', sans-serif"
       },
+      colors:{
+        Dark: '#202124',
+        innerDark: '#191919'
+      },
     },
   },
   plugins: [],

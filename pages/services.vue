@@ -1,6 +1,6 @@
 <script lang="ts" setup>
- const theme = useThemeStore()
- let isDark = computed<boolean>(()=>{ return theme.get_theme })
+const theme = useThemeStore()
+let isDark = computed<boolean>(()=>{ return theme.get_theme })
 </script>
 
 <template>
@@ -10,8 +10,8 @@
     :class="isDark ? 'bg-teal-950 text-white'
     :'bg-white text-teal-700'"
   >
-        <h2 class="text-3xl font-medium">
-          Gore's car wash and bar
-        </h2>
+    <h2 class="text-3xl font-medium">
+      Services Page
+    </h2>
   </section>
 </template>
