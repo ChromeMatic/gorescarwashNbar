@@ -17,6 +17,10 @@ export default {
         Dark: '#202124',
         innerDark: '#191919'
       },
+      backgroundImage:{
+        'main': "url('/public/images/arteum-ro-bGlH3TIzGGE-unsplash.jpg')",
+        'night': "url('/public/images/night.jpg')"
+      },
     },
   },
   plugins: [],

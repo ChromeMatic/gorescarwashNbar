@@ -24,25 +24,25 @@
   <section
    class="w-full flex flex-col space-y-2 justify-center items-center p-1"
    :class="isDark ? 'bg-Dark'
-   :'bg-indigo-100'"
+   :'bg-indigo-50'"
   >
     <nav
-     class="w-full rounded-md flex px-4 py-1 justify-between items-center"
-     :class="isDark ? 'bg-innerDark':'bg-white'"
+     class="w-full rounded-md flex px-4 py-1.5 justify-between items-center border-2"
+     :class="isDark ? 'bg-innerDark border-dashed border-teal-900':'bg-white border-indigo-100'"
     >
 
-      <img src="assets/vehicle.png" class="w-[2.5rem]" alt="logo"/>
+      <img src="assets/vehicle.png" class="w-[2rem]" alt="logo"/>
 
       <div class="hidden mds:hidden md:flex justify-center items-center space-x-4">
         <nuxt-link
          v-for="opt in options"
          :key="opt.name"
          :to="opt.path"
-         class="p-2.5 rounded-md border-2 capitalize transition-all ease-in-out duration-700
+         class="p-1 lg:w-[8rem] flex justify-center items-center rounded-md border-2 capitalize transition-all ease-in-out duration-700
          hover:scale-110 font-semibold"
          :class="isDark ?
          'bg-teal-950 border-teal-900 hover:text-indigo-500 hover:bg-indigo-500/20 hover:border-indigo-500'
-         :''"
+         :'hover:text-indigo-400 hover:border-indigo-500 hover:bg-indigo-500/10'"
         >
           <h2>{{ opt.name }}</h2>
         </nuxt-link>
