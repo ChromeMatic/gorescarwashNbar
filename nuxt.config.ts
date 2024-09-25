@@ -13,9 +13,10 @@ export default defineNuxtConfig({
   },
 
   modules: [
-      '@nuxtjs/google-fonts',
-      '@vueuse/motion/nuxt',
-      '@pinia/nuxt'
+    '@nuxtjs/google-fonts',
+    '@vueuse/motion/nuxt',
+    '@pinia/nuxt',
+    '@nuxt/image'
   ],
 
   imports:{ dirs: ['stores'] },

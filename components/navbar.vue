@@ -33,7 +33,7 @@
 
       <img src="assets/vehicle.png" class="w-[2rem]" alt="logo"/>
 
-      <div class="hidden mds:hidden md:flex justify-center items-center space-x-4">
+      <div class="hidden  md:flex justify-center items-center space-x-4">
         <nuxt-link
          v-for="opt in options"
          :key="opt.name"
