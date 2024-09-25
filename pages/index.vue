@@ -35,7 +35,7 @@
           <NuxtImg
               class="w-full lg:h-full mds:h-1/4 overflow-hidden rounded-2xl object-cover"
               src="/images/PXL_20240915_191158392.jpg"
-              alt=""
+              loading="lazy"
           />
         </div>
 
@@ -43,7 +43,7 @@
           <NuxtImg
               class="w-full h-full overflow-hidden rounded-2xl object-cover"
               src="/images/lucas-clarysse-iu-cLlLPFcY-unsplash.jpg"
-              alt=""
+              loading="lazy"
           />
         </div>
 
@@ -51,7 +51,7 @@
           <NuxtImg
               class="w-full h-full overflow-hidden rounded-2xl object-cover"
               src="/images/PXL_20240915_191143993.MP.jpg"
-              alt=""
+              loading="lazy"
           />
         </div>
 
@@ -59,7 +59,7 @@
           <NuxtImg
               class="w-full h-full overflow-hidden rounded-2xl object-cover"
               src="/images/PXL_20240915_191223017.jpg"
-              alt=""
+              loading="lazy"
           />
         </div>
 
