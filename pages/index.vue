@@ -65,13 +65,13 @@
      :class="isDark ? 'border-teal-900 bg-innerDark'
      :'bg-indigo-50'"
     >
-      <div class="w-full flex justify-center items-center">
+      <div class="w-full justify-center items-center">
          <h2 class="text-4xl overline font-smeibold">
            Wash
          </h2>
       </div>
 
-      <div class="w-full flex space-x-2">
+      <div class="w-full flex lg:flex-row flex-col lg:space-x-2 space-x-0 lg:space-y-0 space-y-4">
 
           <div>
             <NuxtImg
