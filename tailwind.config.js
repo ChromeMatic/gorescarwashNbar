@@ -19,7 +19,11 @@ export default {
       },
       backgroundImage:{
         'main': "url('/public/images/arteum-ro-bGlH3TIzGGE-unsplash.jpg')",
-        'night': "url('/public/images/night.jpg')"
+        'night': "url('/public/images/night.jpg')",
+        'image_1':"url('/public/images/PXL_20240915_191158392.jpg')",
+        'image_2':"url('/public/images/lucas-clarysse-iu-cLlLPFcY-unsplash.jpg')",
+        'image_3': "url('/public/images/PXL_20240915_191143993.MP.jpg')",
+        'image_4': "url('/public/images/PXL_20240915_191223017.jpg')",
       },
       screens: {
         'sm': '650px',
