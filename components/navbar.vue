@@ -1,34 +1,29 @@
 <script lang="ts" setup>
- const motions = useMotions()
  const theme = useThemeStore()
- let isDark = computed(()=>{ return theme.get_theme })
+ const motions = useMotions()
 
+ let show = ref<boolean>(false)
  let options:Links[] = [
     {
       path:'/',
       name:'home'
     },
     {
-      path:'/services',
-      name:'our services'
-    },
-    {
       path:'/contact',
-      name:'contact us'
+      name:'about us'
     },
   ]
- let show = ref<boolean>(false)
 </script>
 
 <template>
   <section
    class="w-full flex flex-col space-y-2 justify-center items-center p-1"
-   :class="isDark ? 'bg-Dark'
+   :class="useIsDark() ? 'bg-Dark'
    :'bg-indigo-50'"
   >
     <nav
      class="w-full rounded-md flex px-4 py-1.5 justify-between items-center border-2"
-     :class="isDark ? 'bg-innerDark border-dashed border-teal-900':'bg-white border-indigo-100'"
+     :class="useIsDark() ? 'bg-innerDark border-dashed border-teal-900':'bg-white border-indigo-100'"
     >
 
       <img src="assets/vehicle.png" class="w-[2rem]" alt="logo"/>
@@ -38,20 +33,41 @@
          v-for="opt in options"
          :key="opt.name"
          :to="opt.path"
-         class="p-1 lg:w-[8rem] flex justify-center items-center rounded-md border-2 capitalize transition-all ease-in-out duration-700
-         hover:scale-110 font-semibold"
-         :class="isDark ?
+         class="p-1 lg:w-[10rem] flex justify-center items-center rounded-md border-2 capitalize transition-all ease-in-out duration-700
+         hover:scale-110 font-semibold space-x-1"
+         :class="useIsDark() ?
          'bg-teal-950 border-teal-900 hover:text-indigo-500 hover:bg-indigo-500/20 hover:border-indigo-500'
          :'hover:text-indigo-400 hover:border-indigo-500 hover:bg-indigo-500/10'"
         >
+          <svg
+              v-if="opt.name === 'home'"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              class="size-5"
+          >
+            <path d="M14.916 2.404a.75.75 0 0 1-.32 1.011l-.596.31V17a1 1 0 0 1-1 1h-2.26a.75.75 0 0 1-.75-.75v-3.5a.75.75 0 0 0-.75-.75H6.75a.75.75 0 0 0-.75.75v3.5a.75.75 0 0 1-.75.75h-3.5a.75.75 0 0 1 0-1.5H2V9.957a.75.75 0 0 1-.596-1.372L2 8.275V5.75a.75.75 0 0 1 1.5 0v1.745l10.404-5.41a.75.75 0 0 1 1.012.319ZM15.861 8.57a.75.75 0 0 1 .736-.025l1.999 1.04A.75.75 0 0 1 18 10.957V16.5h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1-.75-.75V9.21a.75.75 0 0 1 .361-.64Z" />
+          </svg>
+
+          <svg
+              v-if="opt.name === 'about us'"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              class="size-5"
+          >
+            <path fill-rule="evenodd" d="M1 2.75A.75.75 0 0 1 1.75 2h10.5a.75.75 0 0 1 0 1.5H12v13.75a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1-.75-.75v-2.5a.75.75 0 0 0-.75-.75h-2.5a.75.75 0 0 0-.75.75v2.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5H2v-13h-.25A.75.75 0 0 1 1 2.75ZM4 5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1ZM4.5 9a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1ZM8 5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1ZM8.5 9a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1ZM14.25 6a.75.75 0 0 0-.75.75V17a1 1 0 0 0 1 1h3.75a.75.75 0 0 0 0-1.5H18v-9h.25a.75.75 0 0 0 0-1.5h-4Zm.5 3.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm.5 3.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Z" clip-rule="evenodd" />
+          </svg>
+
           <h2>{{ opt.name }}</h2>
+
         </nuxt-link>
       </div>
 
       <button
        @click="show = !show"
        class="border-2 rounded-md md:hidden mds:hidden flex justify-center items-center p-1"
-       :class="isDark ? 'border-teal-900 bg-teal-950 text-teal-400'
+       :class="useIsDark() ? 'border-teal-900 bg-teal-950 text-teal-400'
        :''"
       >
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
@@ -64,12 +80,12 @@
         @click="theme.change_theme()"
         class="border-2 rounded-md p-1.5 flex justify-center items-center transitions-all ease-in-out
         duration-700"
-        :class="isDark ? 'bg-yellow-500/10 text-yellow-500 border-yellow-500'
+        :class="useIsDark() ? 'bg-yellow-500/10 text-yellow-500 border-yellow-500'
         :''"
       >
 
         <svg
-            v-if="isDark === true"
+            v-if="useIsDark() === true"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="currentColor"
@@ -79,7 +95,7 @@
         </svg>
 
         <svg
-            v-if="isDark === false"
+            v-if="useIsDark() === false"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="currentColor"
@@ -103,18 +119,39 @@
        :enter="drop_down_menu.enter"
        :leave="drop_down_menu.leave"
        class="w-full md:hidden mds:hidden flex flex-col space-y-4 rounded-md p-2"
-       :class="isDark ? 'bg-innerDark':'bg-white'"
+       :class="useIsDark() ? 'bg-innerDark':'bg-white'"
       >
         <nuxt-link
          v-for="opt in options"
          :key="opt.name"
          :to="opt.path"
-         class="p-2 rounded-md border-2 capitalize flex justify-center items-center"
-         :class="isDark ?
+         class="p-2 rounded-md space-x-2 border-2 capitalize flex justify-center items-center"
+         :class="useIsDark() ?
          'bg-teal-950 border-teal-900 hover:text-indigo-500 hover:bg-indigo-500/20 hover:border-indigo-500'
          :''"
         >
+          <svg
+              v-if="opt.name === 'home'"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              class="size-5"
+          >
+            <path d="M14.916 2.404a.75.75 0 0 1-.32 1.011l-.596.31V17a1 1 0 0 1-1 1h-2.26a.75.75 0 0 1-.75-.75v-3.5a.75.75 0 0 0-.75-.75H6.75a.75.75 0 0 0-.75.75v3.5a.75.75 0 0 1-.75.75h-3.5a.75.75 0 0 1 0-1.5H2V9.957a.75.75 0 0 1-.596-1.372L2 8.275V5.75a.75.75 0 0 1 1.5 0v1.745l10.404-5.41a.75.75 0 0 1 1.012.319ZM15.861 8.57a.75.75 0 0 1 .736-.025l1.999 1.04A.75.75 0 0 1 18 10.957V16.5h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1-.75-.75V9.21a.75.75 0 0 1 .361-.64Z" />
+          </svg>
+
+          <svg
+              v-if="opt.name === 'about us'"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              class="size-5"
+          >
+            <path fill-rule="evenodd" d="M1 2.75A.75.75 0 0 1 1.75 2h10.5a.75.75 0 0 1 0 1.5H12v13.75a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1-.75-.75v-2.5a.75.75 0 0 0-.75-.75h-2.5a.75.75 0 0 0-.75.75v2.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5H2v-13h-.25A.75.75 0 0 1 1 2.75ZM4 5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1ZM4.5 9a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1ZM8 5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1ZM8.5 9a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1ZM14.25 6a.75.75 0 0 0-.75.75V17a1 1 0 0 0 1 1h3.75a.75.75 0 0 0 0-1.5H18v-9h.25a.75.75 0 0 0 0-1.5h-4Zm.5 3.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm.5 3.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Z" clip-rule="evenodd" />
+          </svg>
+
           <h2>{{ opt.name }}</h2>
+
         </nuxt-link>
       </div>
     </Transition>

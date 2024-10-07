@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.light{ color-scheme: light }
+.dark{ color-scheme: dark }
+
+*{
+    scrollbar-width: thin;
+    scrollbar-color: light-dark(#FAF5EF,#115e59) light-dark(#06b6d4,#202124)
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar { width: 6px;}
+
+*::-webkit-scrollbar-track {
+    background: light-dark(#06b6d4,#202124);
+    border-radius: 2px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: light-dark(#FAF5EF,#115e59);
+    border-radius: 2px;
+    border: 2px solid light-dark(#06b6d4,#202124);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: light-dark(#ffff,#202124);
+}
