@@ -66,18 +66,22 @@
     >
       <div class="w-full flex justify-center items-center space-x-4">
 
-        <NuxtImg
-            class="rounded-md w-full transition-all ease-in-out duration-700 lg:h-14 lg:w-14"
+        <img
+            loading="lazy"
+            class="rounded-md w-full transition-all ease-in-out duration-700 h-14 w-14"
             src="/images/wired-lineal-1698-sponge-hover-pinch.gif"
+            alt="sponge"
         />
 
          <h2 class="text-4xl overline font-smeibold">
            Wash
          </h2>
 
-        <NuxtImg
+        <img
+            loading="lazy"
             class="rounded-md w-full transition-all ease-in-out duration-700 h-14 w-14"
             src="/images/wired-lineal-1698-sponge-hover-pinch.gif"
+            alt="sponge"
         />
 
       </div>
@@ -94,6 +98,7 @@
                :src="useIsDark() ?
                'https://images.unsplash.com/photo-1683728960304-4e0c299359bf?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
                :'https://images.unsplash.com/photo-1632158433377-f80436214f6f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'"
+               alt="rs6"
             />
           </div>
 
