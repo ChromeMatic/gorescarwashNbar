@@ -77,12 +77,12 @@
            Wash
          </h2>
 
-        <img
-            loading="lazy"
-            class="rounded-md w-full transition-all ease-in-out duration-700 h-14 w-14"
-            src="/images/wired-lineal-1698-sponge-hover-pinch.gif"
-            alt="sponge"
-        />
+<!--        <img-->
+<!--            loading="lazy"-->
+<!--            class="rounded-md w-full transition-all ease-in-out duration-700 h-14 w-14"-->
+<!--            src="/images/wired-lineal-1698-sponge-hover-pinch.gif"-->
+<!--            alt="sponge"-->
+<!--        />-->
 
       </div>
 
