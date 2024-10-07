@@ -66,23 +66,9 @@
     >
       <div class="w-full flex justify-center items-center space-x-4">
 
-        <img
-            loading="lazy"
-            class="rounded-md transition-all ease-in-out duration-700 h-14 w-14"
-            src="/images/wired-lineal-1698-sponge-hover-pinch.gif"
-            alt="sponge"
-        />
-
          <h2 class="text-4xl overline font-smeibold">
-           Wash
+           What we do
          </h2>
-
-        <img
-            loading="lazy"
-            class="rounded-md transition-all ease-in-out duration-700 h-14 w-14"
-            src="/images/wired-lineal-1698-sponge-hover-pinch.gif"
-            alt="sponge"
-        />
 
       </div>
 
